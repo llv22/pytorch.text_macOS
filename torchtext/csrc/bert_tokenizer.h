@@ -5,7 +5,8 @@
 
 namespace torchtext {
 
-typedef std::basic_string<uint32_t> UString;
+//typedef std::basic_string<uint32_t> UString;
+typedef std::u32string UString; //fix compliation on xcode 16 due to the missing of std::char_traits<unsigned int>, refer to https://github.com/pytorch/text/pull/2292/commits/059d2f0501de2fe7db6cb2e4becbf0a3912ec4c4 and https://github.com/pytorch/text/issues/2291
 typedef ska_ordered::order_preserving_flat_hash_map<std::string, int64_t>
     IndexDict;
 
